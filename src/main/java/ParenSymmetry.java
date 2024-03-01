@@ -57,7 +57,7 @@ public class ParenSymmetry {
 
     }
 
-    public static void main(String[] args) throws IOException { 
+    public static void main(String[] args) throws IOException {
         ParenSymmetry ps = new ParenSymmetry();
 
         Boolean b0 = ps.isBalanced("()");
