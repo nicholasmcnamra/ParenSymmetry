@@ -1,24 +1,63 @@
 package src.main.java;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class ParenSymmetry {
 
-
-    private Boolean isBalanced(String s) {
+    private static Boolean isBalanced(String s) {
+        int openCount = 0;
+        int closedCount = 0;
+        boolean startsWithClosed = true;
         // implement this method
-        return null;
+        char[] wordToChar = s.toCharArray();
+
+        boolean isTrueOrFalse;
+        // count open and closed parenthesis
+        for (int i = 0; i < wordToChar.length; i++) {
+            if (wordToChar[0] == ')') {
+                startsWithClosed = false;
+            }
+            if (wordToChar[i] == ('(')) {
+                openCount++;
+            }
+            if (wordToChar[i] == (')')) {
+                closedCount++;
+            }
+        }
+        // compare the count of open and closed parenthesis
+        //  -- if counts are the same, return true, else return false
+        if (startsWithClosed == false) {
+            return false;
+        } else if (openCount == closedCount) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    private void checkFile(String filename) {
+    private static void checkFile(String filename) throws IOException {
         // open file named filename
-
+        BufferedReader reader;
+        reader = new BufferedReader(new FileReader(filename));
         // for each line in the file
-            // read the line
-            // print whether or not the line's parenthesis are balanced
+        // read the line
+        String line = reader.readLine();
 
+            // print whether or not the line's parenthesis are balanced
+        while (line != null) {
+            isBalanced(line);
+            line = reader.readLine();
+
+        }
         // CLOSE the file
+        reader.close();
+
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ParenSymmetry ps = new ParenSymmetry();
 
         Boolean b0 = ps.isBalanced("()");
@@ -37,6 +76,8 @@ public class ParenSymmetry {
             trues = ps.isBalanced(strToTest);
         }
         printResult(trues, true);
+
+        ps.checkFile("TestStrings0.txt");
 
     }
 
