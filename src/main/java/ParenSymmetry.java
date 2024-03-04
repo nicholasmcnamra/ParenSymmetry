@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+ 
 public class ParenSymmetry {
 
     private static Boolean isBalanced(String s) {
