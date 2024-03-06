@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ParenSymmetry.iml" filepath="$PROJECT_DIR$/.idea/ParenSymmetry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ParenSymmetry.iml" filepath="$PROJECT_DIR$/ParenSymmetry.iml" />
     </modules>
   </component>
 </project>

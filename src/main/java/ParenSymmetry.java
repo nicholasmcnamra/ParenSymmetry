@@ -4,10 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
- 
+
 public class ParenSymmetry {
 
-    private static Boolean isBalanced(String s) {
+    public static Boolean isBalanced(String s) {
         int openCount = 0;
         int closedCount = 0;
         boolean startsWithClosed = true;
